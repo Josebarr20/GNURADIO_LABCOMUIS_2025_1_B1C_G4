@@ -1,4 +1,4 @@
-# Laboratorio Comunicaciones I
+# Repositorio Laboratorio Comunicaciones I
 ## Integrantes
 - **Jose Alejandro Barrios Pico** - 2212278
 - **Sergio Daniel Velez Santander** - Código
