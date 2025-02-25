@@ -66,6 +66,6 @@ Se sintetizan los principales aportes y puntos relevantes de la práctica, evita
 ### Referencias
 Ejemplo de referencia:
 
-- GNU Radio. (2024, 19 de febrero). Wikipedia, La enciclopedia libre. Fecha de consulta: 12:04, febrero 19, 2024 desde (https://es.wikipedia.org/w/index.php?title=GNU_Radio&oldid=158297509).
-- Teorema de muestreo de Nyquist-Shannon. (2024, 11 de diciembre). Wikipedia, La enciclopedia libre. Fecha de consulta: 11:07, diciembre 11, 2024 desde (https://es.wikipedia.org/w/index.php?title=Teorema_de_muestreo_de_Nyquist-Shannon&oldid=164064264).
+- GNU Radio. (2024, 19 de febrero). Wikipedia, La enciclopedia libre. Fecha de consulta: 12:04, febrero 19, 2024 desde https://es.wikipedia.org/w/index.php?title=GNU_Radio&oldid=158297509.
+- Teorema de muestreo de Nyquist-Shannon. (2024, 11 de diciembre). Wikipedia, La enciclopedia libre. Fecha de consulta: 11:07, diciembre 11, 2024 desde https://es.wikipedia.org/w/index.php?title=Teorema_de_muestreo_de_Nyquist-Shannon&oldid=164064264.
 - ChatGPT. (2025). Respuesta generada por un modelo de inteligencia artificial. OpenAI.
