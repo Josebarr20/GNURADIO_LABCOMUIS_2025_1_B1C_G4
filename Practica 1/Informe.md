@@ -1,4 +1,4 @@
-# Práctica 1: TÍTULO PRÁCTICA
+# Práctica 1
 
 ### Integrantes
 - **Jose Alejandro Barrios Pico** - 2212278
