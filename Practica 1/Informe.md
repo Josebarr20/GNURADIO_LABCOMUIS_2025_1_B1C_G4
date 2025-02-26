@@ -2,7 +2,7 @@
 
 ### Integrantes
 - **Jose Alejandro Barrios Pico** - 2212278
-- **Sergio Daniel Velez Santander** - Código
+- **Sergio Daniel Velez Santander** - 2202789
 
 Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones  
 Universidad Industrial de Santander
