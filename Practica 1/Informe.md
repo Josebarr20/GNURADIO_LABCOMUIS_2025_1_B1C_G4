@@ -1,4 +1,8 @@
-# Práctica 1
+# **Práctica 1**
+*Este informe contiene el desarrollo de las partes:*
+- *1A. GNU Radio para el procesamiento de señales*
+- *1B. Reconociendo equipos*
+- *1C. Mediciones de potencia y frecuencia*
 
 ### Integrantes
 - **Jose Alejandro Barrios Pico** - 2212278
@@ -8,7 +12,7 @@ Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones
 Universidad Industrial de Santander
 
 ### Fecha
-25 de febrero de 2025
+Del 11 al 25 de febrero del 2025
 
 ---
 
@@ -48,7 +52,28 @@ Cada práctica contará con preguntas orientadoras para la elaboración de la in
   Es importante cuando queremos hacer una señal mas simple, reducir el almacenamiento o procesarla más rápido.
 - ¿Qué pasa cuando se asigna una frecuencia de muestreo inadecuada?
 
-  Esto puede llevar a varios problemas, dependiendo de si la frecuencia es demasiado baja o innecesariamente alta. Si la frecuencia es demasiado baja, no estaremos tomando suficientes muestras por segundo para capturar correctamente la señal generando aliasing. Ahora si es muy alta tendremos un mayor uso de memoria y procesamiento, lo cual resulta ineficiente. 
+  Esto puede llevar a varios problemas, dependiendo de si la frecuencia es demasiado baja o innecesariamente alta. Si la frecuencia es demasiado baja, no estaremos tomando suficientes muestras por segundo para capturar correctamente la señal generando aliasing. Ahora si es muy alta tendremos un mayor uso de memoria y procesamiento, lo cual resulta ineficiente.
+- ¿Qué conclusiones se pueden obtener sobre la relación entre la potencia de la señal y la calidad de la comunicación?
+
+  Con una potencia alta, la señal es mas clara y obtenemos menos perdidas, sin embargo, es importante tener en cuenta otros favores como pueden ser el ruido o la interferencia, por lo que lo mas recomendable es buscar un equilibrio.
+- ¿Cómo afecta el piso de ruido a la capacidad de detectar señales débiles?
+
+  El piso de ruido básicamente es el nivel mínimo de ruido, por lo cual, si nuestra señal es menor a este, no será posible distinguirla por que se vera mezclada con el ruido de fondo. 
+- ¿Qué limitaciones tienen los equipos utilizados en términos de ancho de banda y precisión en las mediciones?
+
+  RESPUESTA
+- ¿Cómo se pueden mejorar las mediciones de señal en un entorno con alto nivel de ruido?
+
+  Se podría mejorar aumentando la potencia de la señal, reduciendo el piso de ruido y ajustando parámetros como el RBW.
+- ¿Qué aplicaciones prácticas tienen las mediciones de potencia y ancho de banda en sistemas de comunicaciones reales?
+
+  Midiendo la potencia se puede garantizar que la señal sea clara y eficiente sin hacer un uso ineficiente de energía. Por otro lado, el ancho de banda permite transmitir mas datos sin interferencias. Todo esto es esencial en sistemas de comunicación como redes móviles, fibra óptica y satélites. 
+- ¿Cómo se puede medir la respuesta en frecuencia de un canal alámbrico?
+  
+  RESPUESTA
+- ¿Cómo se puede obtener un modelo sencillo de las pérdidas (pathloss) en un canal inalámbrico?
+  
+  RESPUESTA
 
 ### Procedimiento
 Debe basarse en las acciones efectivamente realizadas durante el laboratorio, describiendo los procesos realizados y los resultados obtenidos. Para cada práctica se pueden brindar preguntas orientadoras o pasos a seguir para establecer lo que se espera lograr/estudiar/analizar/obtener/comparar. Por ejemplo:
