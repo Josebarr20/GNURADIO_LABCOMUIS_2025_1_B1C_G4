@@ -61,7 +61,7 @@ Cada práctica contará con preguntas orientadoras para la elaboración de la in
   El piso de ruido básicamente es el nivel mínimo de ruido, por lo cual, si nuestra señal es menor a este, no será posible distinguirla por que se vera mezclada con el ruido de fondo. 
 - ¿Qué limitaciones tienen los equipos utilizados en términos de ancho de banda y precisión en las mediciones?
 
-  RESPUESTA
+  Ver las imágenes guardadas en la carpeta.
 - ¿Cómo se pueden mejorar las mediciones de señal en un entorno con alto nivel de ruido?
 
   Se podría mejorar aumentando la potencia de la señal, reduciendo el piso de ruido y ajustando parámetros como el RBW.
@@ -70,23 +70,24 @@ Cada práctica contará con preguntas orientadoras para la elaboración de la in
   Midiendo la potencia se puede garantizar que la señal sea clara y eficiente sin hacer un uso ineficiente de energía. Por otro lado, el ancho de banda permite transmitir mas datos sin interferencias. Todo esto es esencial en sistemas de comunicación como redes móviles, fibra óptica y satélites. 
 - ¿Cómo se puede medir la respuesta en frecuencia de un canal alámbrico?
   
-  RESPUESTA
+  Ver las imágenes guardadas en la carpeta.
 - ¿Cómo se puede obtener un modelo sencillo de las pérdidas (pathloss) en un canal inalámbrico?
   
-  RESPUESTA
-
+  Ver las imágenes guardadas en la carpeta.
+  
 ### Procedimiento
-Debe basarse en las acciones efectivamente realizadas durante el laboratorio, describiendo los procesos realizados y los resultados obtenidos. Para cada práctica se pueden brindar preguntas orientadoras o pasos a seguir para establecer lo que se espera lograr/estudiar/analizar/obtener/comparar. Por ejemplo:
-- Describa los procesos realizados en el laboratorio  y los resultados obtenidos.
-- ¿Cómo se alcanza el límite de Nyquist y que pasa cuando se disminuye de este?
-- ¿Por qué al interpolar una señal en GNURADIO su frecuencia disminuye?
-- ¿Por qué al diezmar una señal en GNURADIO su frecuencia aumenta?
-- ¿Cómo se puede determinar la frecuencia máxima de una señal desde lo experimental?
-- ¿Qué le sucede a una señal de audio cuando no se respeta el teorema de Nyquist?
-- Describa las funciones logradas con el Ecualizador desarrollado con GNURadio.
+Cabe resaltar que la presente práctica se desarrolló en tres partes, teniendo como primera parte realizar mediciones de GNU radio para el procesamiento de señales, reconocimiento de equipos y mediciones de potencia y frecuencia. De ésta manera en la primera parte, se exploró la herramienta GNU radio con una guía realizada en la plataforma, a partir de la cual se tomaron capturas de las señales generadas para analizar su comportamiento al interpolar, diezmar y aplicar el teorema de Nyquis. Luego en la segunda parte se realizó un análisis a cerca de la amplitud medida y generada del osciloscopio, junto con medidas de atenuación de un cable coaxial. Para finalmente realizar en la tercera parte mediciones de potencia y frecuencia.
+
+Adicionalmente en la práctica 1C se realizaron 4 actividades a lo largo de la práctica, en las cuáles se realizaron revisiones de especificaciones de los equipos, simulación de señales en GNU Radio, transmisión y medición de señales con el USRP 2920. Cabe aclarar que cada sección contiene preguntas orientadoras que contribuyeron a mejorar el entendimiento de la práctica.
 
 ### Conclusiones
-Se sintetizan los principales aportes y puntos relevantes de la práctica, evitando repetir lo ya consignado en las otras secciones del informe. 
+La práctica permitió comprender la funcionalidad de GNU Radio como una herramienta clave para la simulación y análisis de señales en el laboratorio de comunicaciones. Su capacidad para modificar parámetros como amplitud, frecuencia y ganancia facilita la experimentación y el estudio de sistemas de radio definida por software.
+Se confirmó la importancia del teorema de muestreo y la frecuencia de Nyquist para evitar aliasing y asegurar una correcta reconstrucción de la señal. Además, se evidenció que una frecuencia de muestreo demasiado alta puede ser ineficiente en términos de procesamiento y almacenamiento.
+El reconocimiento y uso de instrumentos como el osciloscopio, el analizador de espectros y el SDR permitieron realizar mediciones clave de amplitud, frecuencia y potencia. Se observó la influencia del piso de ruido en la detección de señales débiles y la necesidad de ajustes adecuados para optimizar las mediciones.
+Se evidenció que una mayor potencia de señal mejora la calidad de la comunicación, pero debe mantenerse un equilibrio para evitar interferencias o desperdicio de energía. Asimismo, se comprendió la relevancia del ancho de banda en la transmisión eficiente de datos.
+La experimentación con interpolación y diezmo permitió visualizar el impacto de estos procesos en la reconstrucción de la señal. Además, la simulación y transmisión de señales con el USRP 2920 permitió evaluar las variaciones de amplitud y atenuación en diferentes condiciones.
+Los conceptos trabajados en la práctica tienen aplicaciones directas en sistemas de comunicación inalámbrica y alámbrica, donde el análisis de potencia, ancho de banda y pérdidas en el canal son fundamentales para garantizar transmisiones eficientes y confiables.
+En general, la práctica proporcionó una base sólida para el manejo de GNU Radio y la interpretación de señales en el ámbito de las telecomunicaciones, permitiendo mejorar el criterio en el análisis de sistemas de comunicación y medición de señales en entornos reales.
 
 ### Referencias
 Ejemplo de referencia:
