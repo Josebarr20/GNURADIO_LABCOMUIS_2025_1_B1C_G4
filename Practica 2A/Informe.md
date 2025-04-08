@@ -1,8 +1,9 @@
-# **Práctica 1**
+# **Práctica 2A**
 *Este informe contiene el desarrollo de las partes:*
-- *1A. GNU Radio para el procesamiento de señales*
-- *1B. Reconociendo equipos*
-- *1C. Mediciones de potencia y frecuencia*
+- *Actividad 1. Simulación de canal en GNU Radio*
+- *Actividad 2. Fenómenos de canal en el osciloscopio*
+- *Actividad 3. Fenómenos de canal en el analizador de espectros*
+- *Actividad 4. Efectos de los fenómenos de canal en la conversión de frecuencia*
 
 ### Integrantes
 - **Jose Alejandro Barrios Pico** - 2212278
@@ -12,86 +13,113 @@ Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones
 Universidad Industrial de Santander
 
 ### Fecha
-Del 11 al 25 de febrero del 2025
+Del 4 al 18 de marzo del 2025
 
 ---
 
 ## Declaración de Originalidad y Responsabilidad
-Los autores de este informe certifican que el contenido aquí presentado es original y ha sido elaborado de manera independiente. Se han utilizado fuentes externas únicamente como referencia y han sido debidamente citadas.
+Los autores de este informe certifican que el contenido aquí presentado es original y ha sido elaborado de manera independiente. Se han utilizado fuentes externas únicamente como referencia y han sido debidamente citadas. 
 
-Se utilizó Chat GPT para consultar algunas preguntas presentes en la introducción y a partir de sus respuestas estructurar la información de manera clara y concisa. Además, se complementa con nuestros conocimientos para asegurar que las explicaciones fueran adecuadas.  
+Se utilizo la IA Copilot para redactar textos y consultar algunas preguntas orientadoras y a partir de sus respuestas estructurar la información de manera clara y concisa. Además, se complementó con nuestros conocimientos para asegurar que las explicaciones fueran adecuadas.  
 
 ---
 ## Contenido
 
 ### Resumen
-El software GNU radio contribuye una útil herramienta con la que cuentan los equipos de cómputo del laboratorio de comunicaciones, este permite desarrollar bloques de procesamiento de señales para implementar en sistemas de radio definida por software. La práctica en cuestión se basó en una introducción de la interfaz principal del programa, donde se pudo trabajar con diferentes tipos de bloques los cuales en conjunto forman el diagrama de flujo, con el cual obtendremos la señal deseada. Una vez dominadas las ideas principales y el funcionamiento de GNU radio, se realizó un reconocimiento de los equipos como el SDR, osciloscopio y analizador de espectros, con los cuales se tomaron mediciones de amplitud, variando la frecuencia de transmisión y ganancia.
+- *Actividad 1. Simulación de canal en GNU Radio*
+
+  Se dio inicio a la practica cargando el flujograma propuesto por el docente, un aspecto clave fue configurar la frecuencia de muestreo (samp_rate) en 25e6 / 2´n Hz, donde n es un numero entero mayor a 2, en nuestro caso en particular se selecciono un valor de n de cinco. 
+Se continúo generando diferentes señales y observando el efecto de variar las frecuencias de corte del filtro, además de analizar el efecto del ruido haciendo uso del osciloscopio y analizador de frecuencia, todo esto para dos tipos de ondas distintas. 
+En general la práctica se enfocaba en observar el efecto que genera el canal a la señal transmitida, aspectos claves en la relación señal – ruido y la eficiencia en la transmisión de datos. 
+
+- *Actividad 2. Fenómenos de canal en el osciloscopio*
+
+  El objetivo de esta práctica busca analizar los comportamientos característicos de un canal cableado real en el dominio del tiempo, utilizando el USRP 2920 y GNU Radio. Se Continúa transmitiendo una señal mediante el flujograma filters_flowgraph.grc, y se activan o desactivan bloques clave (Channel Model, Throttle, USRP Sink, USRP Source y Virtual Sink), asegurando una frecuencia de muestreo de 25e6 / 2´n Hz, donde n es mayor que 2, en nuestro caso seleccionamos un n igual a cinco 
+Luego, se conecta un osciloscopio a la salida del USRP usando distintos cables coaxiales para visualizar los efectos del canal. Se varía la frecuencia de portadora de 50 MHz a 500 MHz para analizar y comparar el comportamiento de la señal bajo diferentes condiciones. 
+
+- *Actividad 3. Fenómenos de canal en el analizador de espectros*
+
+  El objetivo de esta práctica es estudiar el comportamiento de un canal cableado en el dominio de la frecuencia y observar sus efectos en el analizador de espectros. Se utiliza el USRP 2920 y se ejecuta un flujograma filters_flowgraph.grc en GNU Radio que incluye bloques ajustables como Channel Model, Throttle, USRP Sink, USRP Source y Virtual Sink, con una frecuencia de muestreo de 25e6 / 2´n Hz con un n mayor a dos, en nuestro caso seleccionamos un n con valor de cinco.
+Luego se configura y conecta un analizador de espectros, utilizando cables coaxiales, a la salida del USRP. Esto nos permite observar y analizar los efectos del canal real, facilitando el estudio práctico de fenómenos de transmisión. 
+
+- *Actividad 4. Efectos de los fenómenos de canal en la conversión de frecuencia*
+
+  En esta práctica hacemos uso del USRP 2920 y GNU Radio para transmitir y recibir una señal. Configuramos el flujograma filters_flowgraph.grc, activando o desactivando bloques como Channel Model y Throttle, y fijamos la frecuencia de muestreo en 25e6 / 2´n Hz, con n mayor a 2, en nuestro caso seleccionamos un n de valor cinco. 
+El objetivo es ver cómo los fenómenos de un canal real afectan la conversión de frecuencia. Comparamos los resultados al recibir la señal a través de diferentes medios, ya sea por aire o usando un cable coaxial, para notar las variaciones en la señal según el medio de transmisión. 
 
 
-**Palabras clave:** GNU-Radio, Amplitud, Transmisión, Ganancia, Diagrama. 
+**Palabras clave:** Canal, Frecuencia, Filtro, Ruido, Eficiencia, Cable coaxial,. 
 
 ### Introducción
-Cada práctica contará con preguntas orientadoras para la elaboración de la introducción. Por ejemplo: 
-- ¿Qué tan importante es la teoría de muestreo en el procesamiento de señales?
+Cada práctica contará con preguntas orientadoras para la elaboración de la introducción. Por ejemplo:
 
-  El teorema de muestreo es importante porque demuestra que toda la información de una señal contenida en el intervalo temporal entre dos muestras cualesquiera, está descrita por la serie total de muestras, siempre que la señal registrada sea de naturaleza periódica.
-- ¿Cuáles son los principales potenciales de GNURADIO en el laboratorio de comunicaciones?
-  
-  GNU-Radio permite modificar valores claves como amplitud, frecuencia de transmisión y ganancia, todo esto realizando un debido montaje de diagrama de bloques. Por lo cual permite hacer varios análisis relacionados al área de las comunicaciones. 
-- ¿Qué pasa cuando se alcanza el límite de Nyquist?
-  
-  Según el teorema de Nyquist, la frecuencia de muestreo debe ser al menos el doble de la frecuencia máxima presente en la señal, en teoría si estamos en el límite no tendríamos aliasing, por otro lado, si la frecuencia de muestreo es menor, si ocurre aliasing y se puede distorsionar la señal
-- ¿Qué tan alta debe ser la relación entre la frecuencia de muestreo y la frecuencia de la señal para visualizar la señal correctamente?
-  
-  Cuando la relación es alta, se obtiene un muestreo rápido que permite capturar la mayoría de datos de la señal original, evitando el aliasing, sin embargo, la relación depende de qué tan rápido cambia la señal, ya que si la relación es muy alta pero la señal no cambia mucho, podremos estar consumiendo memoria de manera ineficiente.
-- ¿Cuándo es importante interpolar una señal?
+- *Actividad 1. Simulación de canal en GNU Radio*
+•	¿Cuál es el efecto de filtrar las frecuencias altas de una señal? 
 
-  Interpolar una señal es importante cuando queremos estimar valores intermedios entre nuestras muestras conocidas, con el fin de reconstruir o mejorar una señal. 
-- ¿Cuándo es importante diezmar una señal?
-  
-  Es importante cuando queremos hacer una señal mas simple, reducir el almacenamiento o procesarla más rápido.
-- ¿Qué pasa cuando se asigna una frecuencia de muestreo inadecuada?
+Respuesta: Cuando filtramos las altas frecuencias equivale a aplicar un filtro pasa bajas, por lo cual obtenemos una señal con menos ruido y una forma de onda un poco mas suavizada.  
 
-  Esto puede llevar a varios problemas, dependiendo de si la frecuencia es demasiado baja o innecesariamente alta. Si la frecuencia es demasiado baja, no estaremos tomando suficientes muestras por segundo para capturar correctamente la señal generando aliasing. Ahora si es muy alta tendremos un mayor uso de memoria y procesamiento, lo cual resulta ineficiente.
-- ¿Qué conclusiones se pueden obtener sobre la relación entre la potencia de la señal y la calidad de la comunicación?
+•	¿Qué sucede al filtrar muy cerca de la frecuencia fundamental de la señal? 
 
-  Con una potencia alta, la señal es mas clara y obtenemos menos perdidas, sin embargo, es importante tener en cuenta otros favores como pueden ser el ruido o la interferencia, por lo que lo mas recomendable es buscar un equilibrio.
-- ¿Cómo afecta el piso de ruido a la capacidad de detectar señales débiles?
+Respuesta: Esto puede generar que la señal se pierda o se modifique la forma en la que es percibida 
 
-  El piso de ruido básicamente es el nivel mínimo de ruido, por lo cual, si nuestra señal es menor a este, no será posible distinguirla por que se vera mezclada con el ruido de fondo. 
-- ¿Qué limitaciones tienen los equipos utilizados en términos de ancho de banda y precisión en las mediciones?
+•	¿Cuál es el efecto de filtrar las frecuencias bajas de una señal? 
 
-  Ver las imágenes guardadas en la carpeta.
-- ¿Cómo se pueden mejorar las mediciones de señal en un entorno con alto nivel de ruido?
+Respuesta: Esto es como si aplicáramos un filtro pasa altas, cuyo objetivo es eliminar las componentes de baja frecuencia. Al eliminar estas frecuencias se puede llegar a eliminar la componente DC. 
 
-  Se podría mejorar aumentando la potencia de la señal, reduciendo el piso de ruido y ajustando parámetros como el RBW.
-- ¿Qué aplicaciones prácticas tienen las mediciones de potencia y ancho de banda en sistemas de comunicaciones reales?
+•	¿Qué ocurre al eliminar armónicos de una señal? 
 
-  Midiendo la potencia se puede garantizar que la señal sea clara y eficiente sin hacer un uso ineficiente de energía. Por otro lado, el ancho de banda permite transmitir mas datos sin interferencias. Todo esto es esencial en sistemas de comunicación como redes móviles, fibra óptica y satélites. 
-- ¿Cómo se puede medir la respuesta en frecuencia de un canal alámbrico?
-  
-  Ver las imágenes guardadas en la carpeta.
-- ¿Cómo se puede obtener un modelo sencillo de las pérdidas (pathloss) en un canal inalámbrico?
-  
-  Ver las imágenes guardadas en la carpeta.
-  
-### Procedimiento
-Cabe resaltar que la presente práctica se desarrolló en tres partes, teniendo como primera parte realizar mediciones de GNU radio para el procesamiento de señales, reconocimiento de equipos y mediciones de potencia y frecuencia. De ésta manera en la primera parte, se exploró la herramienta GNU radio con una guía realizada en la plataforma, a partir de la cual se tomaron capturas de las señales generadas para analizar su comportamiento al interpolar, diezmar y aplicar el teorema de Nyquis. Luego en la segunda parte se realizó un análisis a cerca de la amplitud medida y generada del osciloscopio, junto con medidas de atenuación de un cable coaxial. Para finalmente realizar en la tercera parte mediciones de potencia y frecuencia.
+Respuesta: Al eliminar los armónicos de una señal, estamos suprimiendo los componentes enteros de la frecuencia fundamental, por lo cual se modificará la representación en el dominio de la frecuencia y la forma de onda en el dominio del tiempo. 
 
-Adicionalmente en la práctica 1C se realizaron 4 actividades a lo largo de la práctica, en las cuáles se realizaron revisiones de especificaciones de los equipos, simulación de señales en GNU Radio, transmisión y medición de señales con el USRP 2920. Cabe aclarar que cada sección contiene preguntas orientadoras que contribuyeron a mejorar el entendimiento de la práctica.
+•	¿Qué efecto tiene la desviación de frecuencia en la señal recibida? ¿Qué efectos produce el filtro cuando la señal recibida se ve afectada por desviación de frecuencia? 
 
-### Conclusiones
-La práctica permitió comprender la funcionalidad de GNU Radio como una herramienta clave para la simulación y análisis de señales en el laboratorio de comunicaciones. Su capacidad para modificar parámetros como amplitud, frecuencia y ganancia facilita la experimentación y el estudio de sistemas de radio definida por software.
-Se confirmó la importancia del teorema de muestreo y la frecuencia de Nyquist para evitar aliasing y asegurar una correcta reconstrucción de la señal. Además, se evidenció que una frecuencia de muestreo demasiado alta puede ser ineficiente en términos de procesamiento y almacenamiento.
-El reconocimiento y uso de instrumentos como el osciloscopio, el analizador de espectros y el SDR permitieron realizar mediciones clave de amplitud, frecuencia y potencia. Se observó la influencia del piso de ruido en la detección de señales débiles y la necesidad de ajustes adecuados para optimizar las mediciones.
-Se evidenció que una mayor potencia de señal mejora la calidad de la comunicación, pero debe mantenerse un equilibrio para evitar interferencias o desperdicio de energía. Asimismo, se comprendió la relevancia del ancho de banda en la transmisión eficiente de datos.
-La experimentación con interpolación y diezmo permitió visualizar el impacto de estos procesos en la reconstrucción de la señal. Además, la simulación y transmisión de señales con el USRP 2920 permitió evaluar las variaciones de amplitud y atenuación en diferentes condiciones.
-Los conceptos trabajados en la práctica tienen aplicaciones directas en sistemas de comunicación inalámbrica y alámbrica, donde el análisis de potencia, ancho de banda y pérdidas en el canal son fundamentales para garantizar transmisiones eficientes y confiables.
-En general, la práctica proporcionó una base sólida para el manejo de GNU Radio y la interpretación de señales en el ámbito de las telecomunicaciones, permitiendo mejorar el criterio en el análisis de sistemas de comunicación y medición de señales en entornos reales.
+Respuesta: Desplaza la señal de la banda esperada, lo que genera errores en la demodulación y perdida de la información. 
+ 
+•	¿Como cuantificar la degradación de la señal al aumentar los niveles de ruido?
+ 
+Respuesta: Principalmente se puede usar la relación SNR, a medida que aumenta el ruido, el SNR disminuye. 
+
+•	¿Como se puede mejorar la relación a ruido en una señal? 
+
+Respuesta: Podemos mejorarla aumentando la potencia de la señal y también aplicando filtros. 
+
+•	¿Como podría cuantificar la calidad de la señal recibida? Considere el caso de señales analógicas y digitales. 
+
+Respuesta: Para las señales analógicas, se utiliza la relación señal – ruido (SNR). En el caso de señales digitales, investigando encontramos que se puede cuantificar a través de la tasa de error de bits (VER). 
+
+- *Actividad 2. Fenómenos de canal en el osciloscopio*
+
+  •	¿Cuál es el efecto del ruido sobre la amplitud de las señales medidas en el osciloscopio? ¿Conservan las mismas relaciones que se evidencian en la simulación?
+
+Respuesta: El ruido genera fluctuaciones aleatorias en la amplitud, haciendo que la onda varie de forma menos estable. En la simulación no se asumen algunas efectos e imperfecciones que están presenten en la práctica.
+
+  •	Demuestre ¿cómo se puede mejorar la relación señal a ruido en una señal? 
+
+Respuesta: Se puede mejorar aumentando la potencia de la señal, también es útil aplicar filtros.  
+
+  •	Usando cables coaxiales de diferentes longitudes, ¿cómo afecta la distancia entre el transmisor y el receptor a la amplitud de la señal medida? 
+
+Respuesta: Usando cables coaxiales largos, la señal se debilita por las perdidas inherentes en el cable, es decir que entra mayor distancia entre el transmisor y receptor, mayor es la atenuación, esto generaría una menor amplitud. 
+
+- *Actividad 3. Fenómenos de canal en el analizador de espectros*
+
+  •	¿Cuál es el efecto del ruido sobre la respuesta en frecuencia de las señales medidas en el analizador de espectro? ¿Conservan las mismas relaciones que se evidencian en la simulación? 
+
+Respuesta: El ruido añade fluctuaciones y distorsiones, haciendo que la grafica no se vea tan suavizada. En la simulación no se asumen algunas efectos e imperfecciones que están presenten en la práctica
+
+•	¿La relación señal a ruido creada intencionalmente desde el computador se amplifica o se reduce en la señal observada en el analizador de espectro?
+
+Respuesta: En la práctica, al transmitir, el hardware y el canal agregan ruido extra, lo que baja la SNR en lo medido.
+
+  •	Usando cables coaxiales de diferentes longitudes, ¿cómo afecta la distancia entre el transmisor y el receptor a la amplitud de la señal medida? 
+
+Respuesta: Usando cables coaxiales largos, la señal se debilita por las perdidas inherentes en el cable, es decir que entra mayor distancia entre el transmisor y receptor, mayor es la atenuación, esto generaría una menor amplitud. 
+
+- *Actividad 4. Efectos de los fenómenos de canal en la conversión de frecuencia*
+  Ver las figuras edjuntadas en la carpeta.
 
 ### Referencias
 Ejemplo de referencia:
 
 - GNU Radio. (2024, 19 de febrero). Wikipedia, La enciclopedia libre. Fecha de consulta: 12:04, febrero 19, 2024 desde https://es.wikipedia.org/w/index.php?title=GNU_Radio&oldid=158297509
-- Teorema de muestreo de Nyquist-Shannon. (2024, 11 de diciembre). Wikipedia, La enciclopedia libre. Fecha de consulta: 11:07, diciembre 11, 2024 desde https://es.wikipedia.org/w/index.php?title=Teorema_de_muestreo_de_Nyquist-Shannon&oldid=164064264
+- Microsoft Corporation. (2025). Copilot [Large language model]. Microsoft Corporation.
 - ChatGPT. (2025). Respuesta generada por un modelo de inteligencia artificial. OpenAI.
