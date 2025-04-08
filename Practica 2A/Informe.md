@@ -53,7 +53,8 @@ El objetivo es ver cómo los fenómenos de un canal real afectan la conversión 
 ### Introducción
 Cada práctica contará con preguntas orientadoras para la elaboración de la introducción. Por ejemplo:
 
-- *Actividad 1. Simulación de canal en GNU Radio*
+*Actividad 1. Simulación de canal en GNU Radio*
+
 •	¿Cuál es el efecto de filtrar las frecuencias altas de una señal? 
 
 Respuesta: Cuando filtramos las altas frecuencias equivale a aplicar un filtro pasa bajas, por lo cual obtenemos una señal con menos ruido y una forma de onda un poco mas suavizada.  
@@ -86,7 +87,7 @@ Respuesta: Podemos mejorarla aumentando la potencia de la señal y también apli
 
 Respuesta: Para las señales analógicas, se utiliza la relación señal – ruido (SNR). En el caso de señales digitales, investigando encontramos que se puede cuantificar a través de la tasa de error de bits (VER). 
 
-- *Actividad 2. Fenómenos de canal en el osciloscopio*
+*Actividad 2. Fenómenos de canal en el osciloscopio*
 
   •	¿Cuál es el efecto del ruido sobre la amplitud de las señales medidas en el osciloscopio? ¿Conservan las mismas relaciones que se evidencian en la simulación?
 
@@ -100,7 +101,7 @@ Respuesta: Se puede mejorar aumentando la potencia de la señal, también es út
 
 Respuesta: Usando cables coaxiales largos, la señal se debilita por las perdidas inherentes en el cable, es decir que entra mayor distancia entre el transmisor y receptor, mayor es la atenuación, esto generaría una menor amplitud. 
 
-- *Actividad 3. Fenómenos de canal en el analizador de espectros*
+*Actividad 3. Fenómenos de canal en el analizador de espectros*
 
   •	¿Cuál es el efecto del ruido sobre la respuesta en frecuencia de las señales medidas en el analizador de espectro? ¿Conservan las mismas relaciones que se evidencian en la simulación? 
 
@@ -114,7 +115,8 @@ Respuesta: En la práctica, al transmitir, el hardware y el canal agregan ruido 
 
 Respuesta: Usando cables coaxiales largos, la señal se debilita por las perdidas inherentes en el cable, es decir que entra mayor distancia entre el transmisor y receptor, mayor es la atenuación, esto generaría una menor amplitud. 
 
-- *Actividad 4. Efectos de los fenómenos de canal en la conversión de frecuencia*
+*Actividad 4. Efectos de los fenómenos de canal en la conversión de frecuencia*
+  
   Ver las figuras edjuntadas en la carpeta.
 
 ### Referencias
